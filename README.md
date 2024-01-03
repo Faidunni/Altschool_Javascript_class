@@ -1,0 +1,1 @@
+# Altschool_Javascript_class
