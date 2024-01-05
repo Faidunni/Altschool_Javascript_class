@@ -61,3 +61,30 @@ switch (month) {
     console.log("Not any of the months listed");
     break;
 }
+
+//Loops: these are used to perform repeated actions based on a condition in Javascript
+
+// while loop
+let i = 0;
+
+while (i < 10) {
+  //shows 0, then 1, 2,3
+  console.log(i);
+  i++; //with this increment statement, the code will kep running till infinity
+}
+
+// do while loop
+
+let j = 5;
+
+do {
+  console.log(j);
+  j++;
+} while (j < 3);
+
+let k = 5;
+
+do {
+  console.log(k);
+  j++;
+} while (k < 3);
