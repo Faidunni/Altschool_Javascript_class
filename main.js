@@ -188,3 +188,8 @@ if (markBmi > johnBmi) {
 } else {
   console.log(`John's ${johnBmi} is higher than Mark's BMI ${markBmi}`);
 }
+
+const inputYear = "1991";
+console.log(inputYear + 18);
+// convert the string to a number
+console.log(Number(inputYear) + 18);
