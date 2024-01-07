@@ -281,7 +281,7 @@ if (hasDriversLicense || hasGoodVision) {
   console.log("Sarah can not drive yet");
 }
 
-if (hasDriversLicense && hasGoodVision  isTired) {
+if ((hasDriversLicense && hasGoodVision) || isTired) {
   console.log("Sarah can drive");
 } else {
   console.log("Someone else should drive...");
