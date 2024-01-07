@@ -286,3 +286,57 @@ if ((hasDriversLicense && hasGoodVision) || isTired) {
 } else {
   console.log("Someone else should drive...");
 }
+
+// coding challenge 3
+const dolphinAverage = (97 + 112 + 101) / 3;
+const koalaAverage = (109 + 95 + 123) / 3;
+const minAverage = 100;
+console.log(dolphinAverage, koalaAverage);
+
+if (dolphinAverage > koalaAverage && dolphinAverage >= minAverage) {
+  console.log("Dolphin's team won");
+} else if (koalaAverage > dolphinAverage && koalaAverage >= minAverage) {
+  console.log("Koala's team won");
+} else if (
+  koalaAverage === dolphinAverage &&
+  koalaAverage >= minAverage &&
+  dolphinAverage === koalaAverage &&
+  dolphinAverage >= minAverage
+) {
+  console.log("Draw");
+} else console.log("No team won");
+
+const averageDolphins = (97 + 112 + 101) / 3;
+const averageKoalas = (109 + 95 + 106) / 3;
+const minimumaverage = 100;
+console.log(averageDolphins, averageKoalas);
+
+if (averageDolphins > averageKoalas && averageDolphins >= minimumaverage) {
+  console.log("Dolphins's team won");
+} else if (averageKoalas > averageDolphins && averageKoalas >= minimumaverage) {
+  console.log("Koalas's team won");
+} else if (
+  averageKoalas === averageDolphins &&
+  averageKoalas >= minimumaverage &&
+  averageDolphins === averageKoalas &&
+  averageDolphins >= minimumaverage
+) {
+  console.log("Draw");
+} else console.log("No team won");
+
+const dolphinsAverage = (96 + 108 + 89) / 3;
+const koalasAverage = (88 + 91 + 110) / 3;
+const minimumAverage = 100;
+console.log(dolphinsAverage, koalasAverage);
+
+if (dolphinsAverage > koalasAverage && dolphinsAverage >= minimumAverage) {
+  console.log("Dolphins's team won");
+} else if (koalasAverage > dolphinsAverage && koalasAverage >= minimumAverage) {
+  console.log("Koalas's team won");
+} else if (
+  koalasAverage === dolphinsAverage &&
+  koalasAverage >= minimumAverage &&
+  dolphinsAverage >= minimumAverage
+) {
+  console.log("Draw");
+} else console.log("No team won");
