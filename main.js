@@ -142,15 +142,15 @@ multiple \n\
 lines`);
 
 // Taking Decisions: IF / ELSE STATEMENTS
-const age = 15;
-const isOldEnough = age >= 18;
+// const age = 15;
+// const isOldEnough = age >= 18;
 
-if (isOldEnough) {
-  console.log("Sarah can start driving license");
-} else {
-  const yearsLeft = 18 - age;
-  console.log(`Sarah is too young. Wait another ${yearsLeft} years`);
-}
+// if (isOldEnough) {
+//   console.log("Sarah can start driving license");
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(`Sarah is too young. Wait another ${yearsLeft} years`);
+// }
 
 const birthYear = 1991;
 
@@ -189,7 +189,100 @@ if (markBmi > johnBmi) {
   console.log(`John's ${johnBmi} is higher than Mark's BMI ${markBmi}`);
 }
 
+// type conversion
 const inputYear = "1991";
 console.log(inputYear + 18);
 // convert the string to a number
 console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas")); //JS gives NaN when a value that is uppose to give us a number doesn't give use that number
+
+console.log(String(23), 23);
+
+// type coercion
+console.log("I am " + 23 + " years old");
+console.log("23" - "10" - 3);
+console.log("23" * "2");
+
+// truthy and falsely value
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;");
+} else {
+  console.log("You should get a job");
+}
+
+let height;
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED");
+}
+
+// Equality operator
+const age = 18;
+// if ((age === 18)) {
+//   console.log("The person just became an adult");
+// }
+// if (age === 18) console.log("You just became an adult (strict)");
+
+// if (age == 18) console.log("You just became an adult (loose)");
+
+// const favourite = Number(prompt("What your favourite number?"));
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// if (favourite == 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// }
+
+// if (favourite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("7 is also a cool number");
+// } else if (favourite === 9) {
+//   console.log("9 is also a cool number");
+// } else {
+//   console.log("Number is not 23, 9 or 7");
+// }
+
+// if (favourite !== 23) console.log("Why not 23?");
+
+// logical operators
+const hasDriversLicense = true; //A
+const hasGoodVision = false; //B
+const isTired = true; //C
+
+console.log(hasDriversLicense && hasGoodVision);
+
+console.log(hasDriversLicense || hasGoodVision);
+
+if (hasDriversLicense && hasGoodVision) {
+  console.log("Sarah can drive");
+} else {
+  console.log("Someone else should drive...");
+}
+
+if (hasDriversLicense && hasGoodVision && isTired) {
+  console.log("Sarah can drive");
+} else {
+  console.log("Someone else should drive...");
+}
+
+//or
+if (hasDriversLicense || hasGoodVision) {
+  console.log("Sarah can drive");
+} else {
+  console.log("Sarah can not drive yet");
+}
+
+if (hasDriversLicense && hasGoodVision  isTired) {
+  console.log("Sarah can drive");
+} else {
+  console.log("Someone else should drive...");
+}
