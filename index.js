@@ -108,3 +108,24 @@ for (const char of firstName) {
 }
 
 // loop(for in) this is use to emurate over properties of an object that are keyed by string
+const user = {
+  name: "john",
+  age: 20,
+  city: "Lagos",
+};
+
+for (const key in user) {
+  // console.log(key);
+  console.log(`The key is: ${key} and the value is ${user[key]}`);
+}
+
+// FUNCTIONS
+function sum() {
+  let result = 20 + 13;
+  console.log(`The result is ${result}`);
+}
+
+sum();
+
+// function variable
+let count = 0;
