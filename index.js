@@ -129,3 +129,19 @@ sum();
 
 // function variable
 let count = 0;
+let middleName = "John";
+
+// function that has no parameters
+function addToCount() {
+  let localCount = 2;
+
+  count = count + 1; //adding to global variable count
+  localCount = localCount + 1;
+
+  console.log("Count is: ", count);
+  console.log(middleName);
+  console.log("Local count is: ", localCount);
+}
+
+addToCount();
+addToCount();
