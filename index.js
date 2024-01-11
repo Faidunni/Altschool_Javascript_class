@@ -108,40 +108,124 @@ for (const char of firstName) {
 }
 
 // loop(for in) this is use to emurate over properties of an object that are keyed by string
-const user = {
-  name: "john",
-  age: 20,
-  city: "Lagos",
-};
+// const user = {
+//   name: "john",
+//   age: 20,
+//   city: "Lagos",
+// };
 
-for (const key in user) {
-  // console.log(key);
-  console.log(`The key is: ${key} and the value is ${user[key]}`);
-}
+// for (const key in user) {
+//   // console.log(key);
+//   console.log(`The key is: ${key} and the value is ${user[key]}`);
+// }
 
-// FUNCTIONS
-function sum() {
-  let result = 20 + 13;
-  console.log(`The result is ${result}`);
-}
+// // FUNCTIONS
+// function sum() {
+//   let result = 20 + 13;
+//   console.log(`The result is ${result}`);
+// }
 
-sum();
+// sum();
 
 // function variable
-let count = 0;
-let middleName = "John";
+// let count = 0;
+// let middleName = "John";
 
 // function that has no parameters
-function addToCount() {
-  let localCount = 2;
+// function addToCount() {
+//   let localCount = 2;
 
-  count = count + 1; //adding to global variable count
-  localCount = localCount + 1;
+// count = count + 1; //adding to global variable count
+// localCount = localCount + 1;
 
-  console.log("Count is: ", count);
-  console.log(middleName);
-  console.log("Local count is: ", localCount);
+// console.log("Count is: ", count);
+// console.log(middleName);
+// console.log("Local count is: ", localCount);
+// }
+
+// addToCount();
+// addToCount();
+
+// function with parameter
+// function displayName(otherName, lastName, age, height) {
+//   alert(otherName + " " + lastName + " " + age + " " + height);
+// }
+
+// displayName("John", " Doe", 25, 179);
+// displayName("Ade", "Johnson", 19, 143);
+
+// to set default value for a parameter that does not have a value
+
+// function displayName(otherName = "", lastName = "", age = 18, height = 150) {
+//   alert(otherName + " " + lastName + " " + age + " " + height);
+// }
+
+// displayName("Azeez", "Muhammed");
+
+// function with return
+// function getFullname(firstname = "", lastname = "") {
+//   const fullName = firstname + " " + lastname;
+//   return fullName;
+// }
+
+// let fullName1 = getFullname("Faizah", "Hazeez");
+// let fullName2 = getFullname("Faida", "Hazeez");
+// alert(fullName1);
+// alert(fullName2);
+
+// function addsTwoNumber(num1, num2) {
+//   const sum = num1 + num2;
+//   return sum;
+// }
+
+// const result = addsTwoNumber(20, 30);
+// console.log(result);
+
+// function with condition
+// function performMathOperation(number1, number2, operationtype) {
+//   if (operationtype === "add") {
+//     const result = number1 + number2;
+//     return result;
+//   } else if (operationtype === "sub") {
+//     const result = number1 - number2;
+//     return result;
+//   } else {
+//     alert("Operation is not supported");
+//   }
+
+//   alert("End of function");
+// }
+
+// const sumResult = performMathOperation(20, 30, "add");
+// console.log(sumResult);
+
+// const subResult = performMathOperation(50, 20, "sub");
+// console.log(subResult);
+
+// // function expression
+// const sayHello = function () {
+//   alert("Hello World");
+// };
+
+// sayHello();
+
+// callback functions
+function displayUser(displayType, showFullname, showUsername) {
+  if (displayType === "full") {
+    showFullname();
+  } else {
+    showUsername();
+  }
 }
 
-addToCount();
-addToCount();
+function showFullname() {
+  alert("John Doe");
+}
+
+function showUsername() {
+  alert("JohnDoe24");
+}
+
+displayUser("no", showFullname, showUsername);
+
+// arrow function
