@@ -229,3 +229,25 @@ function showUsername() {
 displayUser("no", showFullname, showUsername);
 
 // arrow function
+let sum = (a, b) => a + b;
+
+// function displayUser(displayType, showFullname, showUsername) {
+//   if (displayType === "full") {
+//     showFullname();
+//   } else {
+//     showUsername();
+//   }
+// }rewrite as arrow function
+
+const displayUser = (displayType, showFullname, showUsername) => {
+  if (displayType === "full") {
+    showFullname();
+  } else {
+    showUsername();
+  }
+};
+
+// scopes and closure
+
+// project
+prompt("Enter your username");
