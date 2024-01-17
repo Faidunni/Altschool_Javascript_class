@@ -117,10 +117,29 @@ const retirementYears = yearsretirement(1991, "Mike");
 console.log(retirementYears);
 
 // coding Challenge
-const calcAverage = (dolphsin) => (a, b, c) / 3;
-console.log(calcAverage(23 + 20 + 24));
+const calcAverage = (a, b, c) => (a + b + c) / 3;
 
-// function teamsAverage(dolphins, koalas) {
-//   const dolphinsAverage = calcAverage(dolphins);
-//   const koalasAverage = calcAverage(koalas);
-// }
+const dolphinsAverage = calcAverage(44, 23, 71);
+const koalasAverage = calcAverage(65, 54, 49);
+console.log(dolphinsAverage, koalasAverage);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphin team won with ${avgdolphins} vs ${avgkoalas}`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas won with ${avgkoalas} vs ${avgdolphins}`);
+  } else {
+    console.log("No team won");
+  }
+};
+
+checkWinner(dolphinsAverage, koalasAverage);
+
+// ARRAYS
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+console.log(friends[0]);
+console.log(friends.length);
+
+const years = new Array(1991, 1984, 1776);
+console.log(years);
