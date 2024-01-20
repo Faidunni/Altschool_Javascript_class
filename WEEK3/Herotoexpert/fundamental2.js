@@ -125,9 +125,9 @@ console.log(dolphinsAverage, koalasAverage);
 
 const checkWinner = function (avgDolphins, avgKoalas) {
   if (avgDolphins >= 2 * avgKoalas) {
-    console.log(`Dolphin team won with ${avgdolphins} vs ${avgkoalas}`);
+    console.log(`Dolphin team won with ${avgDolphins} vs ${avgKoalas}`);
   } else if (avgKoalas >= 2 * avgDolphins) {
-    console.log(`Koalas won with ${avgkoalas} vs ${avgdolphins}`);
+    console.log(`Koalas won with ${avgKoalas} vs ${avgDolphins}`);
   } else {
     console.log("No team won");
   }
@@ -171,3 +171,123 @@ const ages = [
   calcAge(years[years.length - 1]),
 ];
 console.log(ages);
+
+// Array methods
+const friends = ["Michael", "Steven", "Peter"];
+
+// add element to the start of the array
+friends.push("Jay");
+console.log(friends);
+
+// add element to the beginning of the array
+friends.unshift("John");
+console.log(friends);
+
+// removes the last elemn=ent of an array
+friends.pop();
+console.log(friends);
+const popped = friends.pop();
+console.log(popped);
+
+// removes the first element in array
+friends.shift();
+console.log(friends);
+
+console.log(friends.indexOf("Steven"));
+console.log(friends.indexOf("bob"));
+
+friends.push(23);
+console.log(friends.includes("Steven"));
+console.log(friends.includes("bob"));
+console.log(friends.includes("23"));
+console.log(friends.includes(23));
+
+if (friends.includes("Peter")) {
+  console.log("You have a friend called Peter");
+} else {
+  console.log("Peter who?");
+}
+
+if (friends.includes("Steven")) {
+  console.log("You have a friend called Steven");
+} else {
+  console.log("Steven who?");
+}
+
+// Challenge
+const calcTips = function (bills) {
+  if (bills >= 50 && bills <= 300) {
+    return bills * 0.15;
+  } else {
+    return bills * 0.2;
+  }
+};
+
+const bills = [125, 555, 44];
+
+const tips = [calcTips(bills[0]), calcTips(bills[1]), calcTips(bills[2])];
+
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(bills, tips, totals);
+
+// Introduction to Object
+
+// reviewing arrays
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1993,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+];
+
+console.log(jonasArray);
+
+// object
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  bigCity: "New York",
+  smallCity: "Ibadan",
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+};
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+const cityKey = "City";
+console.log(jonas["big" + cityKey]);
+console.log(jonas["small" + cityKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends"
+);
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong Request! Choose between firstName, lastName, age, job and friends"
+  );
+}
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmedtman";
+console.log(jonas);
+
+// challenge
+//Jonas has 3 friends, and his best friend is called Michael
+console.log(
+  `${jonas.firstName} has ${friends.length} and his best friend is ${friends[0]}`
+); //my solution which was correct, feel proud
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} and his best friend is ${jonas.friends[0]}`
+); //his solution
