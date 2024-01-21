@@ -244,50 +244,134 @@ const jonasArray = [
 console.log(jonasArray);
 
 // object
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   age: 2037 - 1991,
+//   bigCity: "New York",
+//   smallCity: "Ibadan",
+//   job: "teacher",
+//   friends: ["Micheal", "Peter", "Steven"],
+// };
+// console.log(jonas);
+
+// console.log(jonas.lastName);
+// console.log(jonas["lastName"]);
+
+// const nameKey = "Name";
+// console.log(jonas["first" + nameKey]);
+// console.log(jonas["last" + nameKey]);
+
+// const cityKey = "City";
+// console.log(jonas["big" + cityKey]);
+// console.log(jonas["small" + cityKey]);
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends"
+// );
+
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log(
+//     "Wrong Request! Choose between firstName, lastName, age, job and friends"
+//   );
+// }
+
+// jonas.location = "Portugal";
+// jonas["twitter"] = "@jonasschmedtman";
+// console.log(jonas);
+
+// // challenge
+// //Jonas has 3 friends, and his best friend is called Michael
+// console.log(
+//   `${jonas.firstName} has ${friends.length} and his best friend is ${friends[0]}`
+// ); //my solution which was correct, feel proud
+
+// console.log(
+//   `${jonas.firstName} has ${jonas.friends.length} and his best friend is ${jonas.friends[0]}`
+// ); //his solution
+
+// object method
 const jonas = {
   firstName: "Jonas",
   lastName: "Schmedtmann",
-  age: 2037 - 1991,
+  birthYear: 1991,
   bigCity: "New York",
   smallCity: "Ibadan",
   job: "teacher",
   friends: ["Micheal", "Peter", "Steven"],
+  hasDriversLicense: false,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    // console.log(this);
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  // getSummary: function () {
+  //   return;
+  //   `${this.firstName} is a ${this.age} years old and he has ${this.hasDriversLicense}`;
+  // },my solution, it was wrong because you can't assume that calcage was already called and you need a if statement for the boolean
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} -years old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's licence`;
+  },
 };
-console.log(jonas);
 
-console.log(jonas.lastName);
-console.log(jonas["lastName"]);
+console.log(jonas.getSummary());
 
-const nameKey = "Name";
-console.log(jonas["first" + nameKey]);
-console.log(jonas["last" + nameKey]);
+console.log(jonas.calcAge());
+console.log(jonas.age);
 
-const cityKey = "City";
-console.log(jonas["big" + cityKey]);
-console.log(jonas["small" + cityKey]);
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas["calcAge"](1991));
 
-const interestedIn = prompt(
-  "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends"
-);
+// Challenge 3
+const mark = {
+  firstName: "Mark",
+  lastName: "Smith",
+  mass: 78,
+  height: 1.69,
 
-if (jonas[interestedIn]) {
-  console.log(jonas[interestedIn]);
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+console.log(mark.calcBMI());
+console.log(mark.bmi);
+
+const john = {
+  firstName: "John",
+  lastName: "Smith",
+  mass: 92,
+  height: 1.92,
+
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+console.log(john.calcBMI());
+console.log(john.bmi);
+
+if (john.johnBMI >= mark.markBMI) {
+  console.log(`John's BMI ${john.calcBMI()} is greater than ${mark.calcBMI()}`);
 } else {
   console.log(
-    "Wrong Request! Choose between firstName, lastName, age, job and friends"
+    `Mark's BMI ${mark.calcBMI()} is greater the John's ${john.calcBMI()}`
   );
 }
-
-jonas.location = "Portugal";
-jonas["twitter"] = "@jonasschmedtman";
-console.log(jonas);
-
-// challenge
-//Jonas has 3 friends, and his best friend is called Michael
-console.log(
-  `${jonas.firstName} has ${friends.length} and his best friend is ${friends[0]}`
-); //my solution which was correct, feel proud
-
-console.log(
-  `${jonas.firstName} has ${jonas.friends.length} and his best friend is ${jonas.friends[0]}`
-); //his solution
