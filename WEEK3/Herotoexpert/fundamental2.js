@@ -375,3 +375,107 @@ if (john.johnBMI >= mark.markBMI) {
     `Mark's BMI ${mark.calcBMI()} is greater the John's ${john.calcBMI()}`
   );
 }
+
+// loop
+// console.log("Lifting weights repetition 1");
+// console.log("Lifting weights repetition 2");
+// console.log("Lifting weights repetition 3");
+// console.log("Lifting weights repetition 4");
+// console.log("Lifting weights repetition 5");
+// console.log("Lifting weights repetition 6");
+// console.log("Lifting weights repetition 7");
+// console.log("Lifting weights repetition 8");
+// console.log("Lifting weights repetition 9");
+// console.log("Lifting weights repetition 10");
+
+// for (let rep = 1; rep <= 30; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+const jonny = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+// console.log(jonny[0]);
+// console.log(jonny[1]);
+// console.log(jonny[2]);
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(jonny[i]);
+// }
+
+for (let i = 0; i < jonny.length; i++) {
+  // reading from jonny array
+  console.log(jonny[i], typeof jonny[i]);
+
+  // filling type array
+  // types[i] = typeof jonny[i];
+  types.push(typeof jonny[i]);
+}
+console.log(types);
+
+const year = [1991, 2007, 1969, 2020];
+const age = [];
+
+for (let i = 0; i < year.length; i++) {
+  age.push(2037 - year[i]);
+}
+console.log(age);
+
+// continue and break
+console.log("--ONLY STRINGS--");
+for (let i = 0; i < jonny.length; i++) {
+  if (typeof jonny[i] !== "string") continue;
+
+  console.log(jonny[i], typeof jonny[i]);
+}
+
+console.log("--BREAK WITH NUMBER--");
+for (let i = 0; i < jonny.length; i++) {
+  if (typeof jonny[i] === "number") break;
+
+  console.log(jonny[i], typeof jonny[i]);
+}
+
+// looping backward
+const johny = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+
+for (let i = johny.length - 1; i >= 0; i--) {
+  console.log(i, johny[i]);
+}
+
+// loop in a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-----Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weigth reetition ${rep}`);
+  }
+}
+
+// WHILE LOOP
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weights repetition ${rep}`);
+  rep++;
+}
+
+let dice = Math.random() * 6;
