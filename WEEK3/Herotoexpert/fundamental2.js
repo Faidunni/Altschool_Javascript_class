@@ -215,20 +215,20 @@ if (friends.includes("Steven")) {
 }
 
 // Challenge
-const calcTips = function (bills) {
-  if (bills >= 50 && bills <= 300) {
-    return bills * 0.15;
-  } else {
-    return bills * 0.2;
-  }
-};
+// const calcTips = function (bills) {
+//   if (bills >= 50 && bills <= 300) {
+//     return bills * 0.15;
+//   } else {
+//     return bills * 0.2;
+//   }
+// };
 
-const bills = [125, 555, 44];
+// const bills = [125, 555, 44];
 
-const tips = [calcTips(bills[0]), calcTips(bills[1]), calcTips(bills[2])];
+// const tips = [calcTips(bills[0]), calcTips(bills[1]), calcTips(bills[2])];
 
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(bills, tips, totals);
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(bills, tips, totals);
 
 // Introduction to Object
 
@@ -474,8 +474,45 @@ for (let exercise = 1; exercise < 4; exercise++) {
 
 let rep = 1;
 while (rep <= 10) {
-  console.log(`WHILE: Lifting weights repetition ${rep}`);
+  // console.log(`WHILE: Lifting weights repetition ${rep}`);
   rep++;
 }
 
-let dice = Math.random() * 6;
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`you rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end.....");
+}
+
+// coding challenges
+const calcTips = function (bills) {
+  if (bills >= 50 && bills <= 300) {
+    return bills * 0.15;
+  } else {
+    return bills * 0.2;
+  }
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTips(bills[i]);
+  tips.push(tips);
+  totals.push.tips(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+const calcaverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+console.log(calcaverage([totals]));
