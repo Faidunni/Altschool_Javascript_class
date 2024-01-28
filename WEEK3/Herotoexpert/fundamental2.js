@@ -488,31 +488,92 @@ while (dice !== 6) {
 }
 
 // coding challenges
-const calcTips = function (bills) {
-  if (bills >= 50 && bills <= 300) {
-    return bills * 0.15;
-  } else {
-    return bills * 0.2;
+// const calcTips = function (bills) {
+//   if (bills >= 50 && bills <= 300) {
+//     return bills * 0.15;
+//   } else {
+//     return bills * 0.2;
+//   }
+// };
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//   const tip = calcTips(bills[i]);
+//   tips.push(tips);
+//   // totals.push.tips(tip[i] + bills[i]);
+// }
+// console.log(bills, tips, totals);
+
+// const calcaverage = function (arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+//     sum += arr[i];
+//   }
+//   return sum / arr.length;
+// };
+
+// console.log(calcaverage([totals]));
+
+// problem solving
+//we work for a company building a smart home thermometer. Our most recent task is this; "Given an array of temperature of one day, calculate the temperature amplitude. Keep in mind that sometimes might be a sensor error"
+
+const temperature = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+
+// 1) Understanding the problem
+// -what is temp amplitude? Answer: differnce betwwen highest and lowest temp
+// -how to compute max and min temperatur
+// what is a sensor error? And what to do?
+
+// 2) Breaking to sub-problems
+// -How to ignore error?
+// -Find max value in temp array
+// -Find min value in temp array
+// -Substract min from max (amplitude) and return it
+
+const calcTempAmplitude = function (t1, t2) {
+  // reference from mdn
+  // const array1 = ["a", "b". "c"]
+  // const array2 = ["d", "e". "f"]
+  // const array3 = array1.concat(array2)
+
+  const temps = t1.concat(t2);
+
+  let max = temps[0];
+  let min = temps[0];
+
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+
+    if (typeof curTemp !== "number") continue;
   }
+  console.log(max, min);
+  return max - min;
 };
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
+const amplitude = calcTempAmplitude(temperature);
+const amplitudeNew = calcTempAmplitude([3, 5, 1], [9, 0, 5]);
+console.log(amplitudeNew);
+console.log(amplitude);
 
-for (let i = 0; i < bills.length; i++) {
-  const tip = calcTips(bills[i]);
-  tips.push(tips);
-  totals.push.tips(tip + bills[i]);
-}
-console.log(bills, tips, totals);
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+    value: prompt("Degree celsius:"),
+  };
 
-const calcaverage = function (arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-    sum += arr[i];
-  }
-  return sum / arr.length;
+  console.log(measurement);
+  console.log(measurement.value);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
 };
-console.log(calcaverage([totals]));
+// Identity the bug
+console.log(measureKelvin);
