@@ -534,16 +534,79 @@ const temperature = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 // -Find min value in temp array
 // -Substract min from max (amplitude) and return it
 
-const calcTempAmplitude = function (t1, t2) {
-  // reference from mdn
-  // const array1 = ["a", "b". "c"]
-  // const array2 = ["d", "e". "f"]
-  // const array3 = array1.concat(array2)
+// const calcTempAmplitude = function (t1, t2) {
+//   // reference from mdn
+//   // const array1 = ["a", "b". "c"]
+//   // const array2 = ["d", "e". "f"]
+//   // const array3 = array1.concat(array2)
 
+//   const temps = t1.concat(t2);
+
+//   let max = temps[0];
+//   let min = temps[0];
+
+//   for (let i = 0; i < temps.length; i++) {
+//     const curTemp = temps[i];
+
+//     if (curTemp > max) max = curTemp;
+//     if (curTemp < min) min = curTemp;
+
+//     if (typeof curTemp !== "number") continue;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitude = calcTempAmplitude(temperature);
+// const amplitudeNew = calcTempAmplitude([3, 5, 1], [9, 0, 5]);
+// console.log(amplitudeNew);
+// console.log(amplitude);
+
+// debugging
+// const measureKelvin = function () {
+//   const measurement = {
+//     type: "temp",
+//     unit: "celsius",
+//     // value: prompt("Degree celsius:"),
+//     // all values passed in a prompt comes back as a string, to convert it to a number you simply add number
+
+//     value: Number(prompt("Degree celsius:")),
+//   };
+
+//   // console.log(measurement);
+//   console.table(measurement);
+
+//   // console.warn(measurement);
+//   // console.error(measurement);
+//   // console.log(measurement.value);
+
+//   const kelvin = measurement.value + 273;
+//   return kelvin;
+// };
+
+// Identity the bug
+// console.log(measureKelvin);
+// const measureKelvin = function () {
+//   const measurement = {
+//     type: "temp",
+//     unit: "celsius",
+//     value: Number(prompt("Degrees Celsius: ")),
+//   };
+
+//   console.table(measurement);
+
+//   const kelvin = measurement.value + 273;
+//   return kelvin;
+// };
+
+// console.log(measureKelvin());
+
+// Debugger tool
+const calcTempAmplitudeBug = function (t1, t2) {
   const temps = t1.concat(t2);
 
-  let max = temps[0];
-  let min = temps[0];
+  let max = 0;
+  let min = 0;
 
   for (let i = 0; i < temps.length; i++) {
     const curTemp = temps[i];
@@ -557,23 +620,39 @@ const calcTempAmplitude = function (t1, t2) {
   return max - min;
 };
 
-const amplitude = calcTempAmplitude(temperature);
-const amplitudeNew = calcTempAmplitude([3, 5, 1], [9, 0, 5]);
-console.log(amplitudeNew);
-console.log(amplitude);
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 0, 5]);
+console.log(amplitudeBug);
 
-const measureKelvin = function () {
-  const measurement = {
-    type: "temp",
-    unit: "celsius",
-    value: prompt("Degree celsius:"),
-  };
+// challenge
+// example: [17, 21, 23] print "... 17C in 1 days ...21C in 2 days ...23C in 3 days"
 
-  console.log(measurement);
-  console.log(measurement.value);
+// Create a function "printForecast" which takes in an array "arr" and logs a spring like the above to the console
 
-  const kelvin = measurement.value + 273;
-  return kelvin;
+// Test data 1: [17, 21, 23]
+// Test data 2: [17, 5, -5, 0, 4]
+
+// 1) Understanding the problem
+// - Array transformed to spring, separated by ...
+// - what is the X days? Answer: Index + 1
+
+// 2) Breaking up into sub-problems
+//  -Transform array into string
+//  -Transform each element to string with C
+// -Strings needs to contain day (index + 1)
+// add ... between elements and start and end of string
+
+const data1 = [17, 21, 23];
+const data2 = [17, 5, -5, 0, 4];
+
+console.log(`...${data1[0]}C ...${data1[1]}C ... ${data1[2]}C ...`);
+
+const printForecast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += `${arr[i]}C in ${i + 1} days ... `;
+  }
+
+  console.log("..." + str);
 };
-// Identity the bug
-console.log(measureKelvin);
+
+printForecast(data1);
